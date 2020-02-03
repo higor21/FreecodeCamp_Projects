@@ -1,0 +1,29 @@
+section > form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#recommendation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#to_improve {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+form {
+  max-width: 720px;
+  margin: auto;
+  padding: 2rem;
+  background: lightgreen;
+}
+form > input:nth-child(-n+6) {
+  align-self: stretch;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,28 @@
+
+     
+=flex_display($direction, $align)
+    display: flex
+    flex-direction: $direction
+    align-items: $align
+    
+
+section > form 
+    +flex_display(column, flex-start)
+
+#recommendation 
+    +flex_display(column, flex-start)
+
+#to_improve
+    +flex_display(column, flex-start)
+
+
+
+form
+    max-width: 720px
+    margin: auto
+    padding: 2.0rem
+    background: lightgreen
+    > input
+        &:nth-child(-n+6)
+            align-self: stretch
+        
