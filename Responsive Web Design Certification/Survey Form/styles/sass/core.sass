@@ -1,28 +1,83 @@
+$text_color_pattern: rgba(255,255,255,0.8)
 
-     
-=flex_display($direction, $align)
+=flex_display($direction, $align, $justify: stretch)
     display: flex
     flex-direction: $direction
     align-items: $align
+    justify-content: $justify
     
+=size_and_style($size, $style: sans-serif, $color: black, $italic: unset)
+    font-size: $size
+    font-family: $style
+    font-style: if($italic != unset, italic, unset)
+    color: $color
+
+%input_larger_pattern
+    align-self: stretch
+    height: 30px
+    border-radius: 5px
+    border: none
+    padding-left: 5px
+    font-size: 15px
+
+%input_smaller_pattern
+    +flex_display(column, flex-start)
+    label
+        margin: 7px 0
+        display: flex
+        align-items: center
+    input
+        min-height: 1.25rem
+        min-width: 1.25rem
+        margin: 0 5px 0 0
 
 section > form 
     +flex_display(column, flex-start)
-
-#recommendation 
-    +flex_display(column, flex-start)
-
-#to_improve
-    +flex_display(column, flex-start)
-
-
-
-form
-    max-width: 720px
+    max-width: 640px
     margin: auto
-    padding: 2.0rem
-    background: lightgreen
+    padding: 20px 40px
+    border-radius: 3px
+    background-color: rgba(27, 27, 50, 0.8)
+    label
+        +size_and_style(18px, $color: $text_color_pattern)
+    > label
+        margin: 20px 0 5px 0
     > input
         &:nth-child(-n+6)
-            align-self: stretch
-        
+            @extend %input_larger_pattern
+    #recommendation, #to_improve
+        @extend %input_smaller_pattern
+    select 
+        @extend %input_larger_pattern
+        width: 100%
+    textarea
+        min-width: 100%
+        max-width: 100%
+        min-height: 100px
+        font-size: 15px
+        box-sizing: border-box
+        padding: 5px
+    button
+        @extend %input_larger_pattern
+        background-color: #37af65
+        margin-top: 20px
+        width: 100%
+        color: $text_color_pattern
+        height: 40px
+
+header 
+    +flex_display(column, center, center)
+    height: 150px
+    letter-spacing: 0.1em
+    h1 
+        +size_and_style(2em, 'Poppins', $text_color_pattern)
+        margin: 5px auto
+    p 
+        +size_and_style(1.125rem, 'Poppins', $text_color_pattern, italic)
+        margin: 5px auto
+
+body 
+    background-image: linear-gradient( 115deg, rgba(58, 58, 158, 0.8), rgba(136, 136, 206, 0.7) ), url(https://raw.githubusercontent.com/lasjorg/fcc-form-example-image/master/67103817-7c51e200-f18b-11e9-975f-f74561336a9a-lj.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
