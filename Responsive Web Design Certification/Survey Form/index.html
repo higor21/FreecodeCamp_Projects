@@ -29,7 +29,7 @@
                     required
                 >
 
-                <label for="age">Age</label>
+                <label for="age">Age (Optional)</label>
                 <input 
                     type="number" 
                     placeholder="Age"
@@ -38,7 +38,7 @@
                 >
 
                 <label for="role">Which option best describes your current role?</label>
-                <select name="role" id="role">
+                <select name="role" id="role" required>
                     <option value="none" disabled selected>Select current role</option>
                     <option value="student">Student</option>
                     <option value="ft_job">Full Time Job</option>
@@ -51,21 +51,21 @@
                 <label for="recommendation">Would you recommend freeCodeCamp to a friend?</label>
                 <div id="recommendation">
                     <label for="definitely">
-                        <input type="radio" id="definitely" name="recommendation" value="definitely"/>
+                        <input type="radio" id="definitely" name="recommendation" value="definitely" checked required/>
                         Definitely
                     </label>
                     <label for="maybe">
-                        <input type="radio" id="maybe" name="recommendation" value="maybe"/>
+                        <input type="radio" id="maybe" name="recommendation" value="maybe" required/>
                         Maybe
                     </label>
                     <label for="not_sure">
-                        <input type="radio" id="not_sure" name="recommendation" value="not_sure"/>
+                        <input type="radio" id="not_sure" name="recommendation" value="not_sure" required/>
                         Not sure
                     </label>
                 </div>
 
                 <label for="feature">What is your favorite feature of freeCodeCamp?</label>
-                <select name="feature" id="feature">
+                <select name="feature" id="feature" required>
                     <option value="none" disabled selected>Select an option</option>
                     <option value="challenges">Challenges</option>  
                     <option value="projects">Projects</option>
@@ -126,7 +126,7 @@
                 </div>
 
                 <label for="comments">Any comments or suggestions?</label>
-                <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+                <textarea name="comments" id="comments" placeholder="Enter your comment here..."></textarea>
 
                 <button type="submit">
                     Submit

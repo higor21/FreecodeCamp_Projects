@@ -1,29 +1,96 @@
+section > form button, section > form select, section > form > input:nth-child(-n+6) {
+  align-self: stretch;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  padding-left: 5px;
+  font-size: 15px;
+}
+
+section > form #recommendation, section > form #to_improve {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: stretch;
+}
+section > form #recommendation label, section > form #to_improve label {
+  margin: 7px 0;
+  display: flex;
+  align-items: center;
+}
+section > form #recommendation input, section > form #to_improve input {
+  min-height: 1.25rem;
+  min-width: 1.25rem;
+  margin: 0 5px 0 0;
+}
+
 section > form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
-
-#recommendation {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-#to_improve {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-form {
-  max-width: 720px;
+  justify-content: stretch;
+  max-width: 640px;
   margin: auto;
-  padding: 2rem;
-  background: lightgreen;
+  padding: 20px 40px;
+  border-radius: 3px;
+  background-color: rgba(27, 27, 50, 0.8);
 }
-form > input:nth-child(-n+6) {
-  align-self: stretch;
+section > form label {
+  font-size: 18px;
+  font-family: sans-serif;
+  font-style: unset;
+  color: rgba(255, 255, 255, 0.8);
+}
+section > form > label {
+  margin: 20px 0 5px 0;
+}
+section > form select {
+  width: 100%;
+}
+section > form textarea {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100px;
+  font-size: 15px;
+  box-sizing: border-box;
+  padding: 5px;
+}
+section > form button {
+  background-color: #37af65;
+  margin-top: 20px;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.8);
+  height: 40px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  letter-spacing: 0.1em;
+}
+header h1 {
+  font-size: 2em;
+  font-family: "Poppins";
+  font-style: unset;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 5px auto;
+}
+header p {
+  font-size: 1.125rem;
+  font-family: "Poppins";
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 5px auto;
+}
+
+body {
+  background-image: linear-gradient(115deg, rgba(58, 58, 158, 0.8), rgba(136, 136, 206, 0.7)), url(https://raw.githubusercontent.com/lasjorg/fcc-form-example-image/master/67103817-7c51e200-f18b-11e9-975f-f74561336a9a-lj.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 /*# sourceMappingURL=main.css.map */
