@@ -1,0 +1,73 @@
+.container
+    margin: 75px auto 0 auto
+    max-width: 900px
+    text-align: center
+
+nav
+    +display_flex($justify: space-between, $align: center)
+    background: $background_pattern
+    box-sizing: border-box
+    min-height: 75px
+    padding: 0 15px
+    position: fixed
+    top: 0
+    width: 100%
+    #logo img
+        max-width: 300px
+        width: 100%
+    #menu
+        width: 560px
+        +display_flex($justify: space-around)
+        a 
+            text-decoration: none
+            +text_style()
+
+
+#features
+    margin-top: 50px
+    div
+        +display_flex($align: center)
+        margin: 20px 0
+        span
+            min-width: 100px
+            i
+                color: orange
+                font-size: 40px
+        div
+            +display_flex(column, center, flex-start)
+            line-height: 1.5em
+            margin-left: 70px
+            text-align: left
+            h2, p 
+                margin: 0
+
+#operation
+    margin-top: 50px
+    iframe
+        height: 315px
+        width: 560px
+
+#pricing
+    +display_grid(repeat(3, 1fr), $grid_gap: 0 15px)
+    box-sizing: border-box
+    margin-top: 50px
+    > div
+        +display_flex(column, space-between, center)
+        background: white
+        border: 1px solid black
+        height: 250px
+        header
+            +display_flex($justify: center, $align: center)
+            align-self: stretch
+            background: #ddd
+            font-weight: bold
+            height: 40px
+        div 
+            span 
+                +text_style($size: 25px, $bold: true)
+            p 
+                margin: 10px auto
+                width: 50%
+        button
+            @extend %button_style
+            margin: 15px auto

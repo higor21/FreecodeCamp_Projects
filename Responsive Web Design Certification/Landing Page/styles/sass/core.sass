@@ -1,56 +1,12 @@
-$background_pattern: #eee
+@import './_variables.sass'
+@import './_functions.sass'
+@import './_main_content.sass'
     
-=display_flex($direction: row, $justify: stretch, $align: stretch)
-    display: flex
-    flex-direction: $direction
-    justify-content: $justify
-    align-items: $align
-
-=text_style($letter_style: sans-serif, $size: 1em, $color: black, $bold: false)
-    font-family: $letter_style
-    font-size: $size
-    color: $color
-    font-weight: if($bold, bold, unset)
-
-=display_grid($grid_template, $opt: column, $grid_gap: 0 0)
-    display: grid
-    grid-gap: $grid_gap
-    @if $opt == column
-        grid-template-columns: $grid_template
-    @else 
-        grid-template-rows: $grid_template
-
-%button_style
-    border: none
-    background: #f1c40f
-    font-weight: bold
-    max-width: 150px
-    width: 100%
-    height: 30px
-
-nav
-    position: fixed
-    top: 0
-    width: 100%
-    background: $background_pattern
-    min-height: 75px
-    +display_flex($justify: space-between, $align: center)
-    padding: 0 15px
-    box-sizing: border-box
-    #logo img
-        max-width: 300px
-        width: 100%
-    #menu
-        width: 560px
-        +display_flex($justify: space-around)
-        a 
-            text-decoration: none
-            +text_style()
-
-.container
-    margin: 75px auto 0 auto
-    max-width: 900px
-    text-align: center
+body
+    +text_style('Lore')
+    background-color: $background_pattern
+    margin: 0
+    padding: 0
 
 header
     +display_flex(column)
@@ -60,69 +16,25 @@ header
         +display_flex(column, space-between ,center)
         height: 80px
         input 
-            padding-left: 5px
-            min-width: 200px
-            width: 35%
             height: 30px
+            min-width: 200px
+            padding-left: 5px
+            width: 35%
         button
             @extend %button_style
-
-#features
-    margin-top: 50px
-    div
-        +display_flex($align: center)
-        margin: 20px 0
-        span 
-            width: 40px
-            height: 40px
-            background-color: green
-        div
-            +display_flex(column, center, flex-start)
-            margin-left: 70px
-            text-align: left
-            line-height: 1.5em
-            h2, p 
-                margin: 0
-
-#operation
-    margin-top: 50px
-    iframe
-        height: 315px
-        width: 560px
-
-#pricing
-    +display_grid(repeat(3, 1fr), $grid_gap: 0 15px)
-    margin-top: 50px
-    box-sizing: border-box
-    > div
-        +display_flex(column, space-between, center)
-        border: 1px solid black
-        background: white
-        height: 250px
-        header
-            +display_flex($justify: center, $align: center)
-            height: 40px
-            align-self: stretch
-            background: #ddd
-            font-weight: bold
-        div 
-            span 
-                +text_style($size: 25px, $bold: true)
-            p 
-                width: 50%
-                margin: 10px auto
-        button
-            @extend %button_style
-            margin: 15px auto
 
 footer 
-    +display_flex(column, space-around, flex-end)
-    height: 80px
-    padding-right: 10px
+    +display_flex(column, center, flex-end)
     background-color: #ddd
-
-body
-    padding: 0
-    margin: 0
-    background-color: $background_pattern
-    +text_style('Lore')
+    height: 80px
+    margin-top: 50px
+    padding-right: 10px
+    p 
+        color: gray
+        margin: 5px 0
+    div
+        +display_flex($justify: space-between, $align: center)
+        width: 230px
+        a
+            +text_style()        
+            text-decoration: none

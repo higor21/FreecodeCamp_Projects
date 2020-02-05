@@ -1,4 +1,4 @@
-#pricing > div button, header form button {
+header form button, #pricing > div button {
   border: none;
   background: #f1c40f;
   font-weight: bold;
@@ -7,18 +7,24 @@
   height: 30px;
 }
 
+.container {
+  margin: 75px auto 0 auto;
+  max-width: 900px;
+  text-align: center;
+}
+
 nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #eee;
-  min-height: 75px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 15px;
+  background: #eee;
   box-sizing: border-box;
+  min-height: 75px;
+  padding: 0 15px;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 nav #logo img {
   max-width: 300px;
@@ -39,10 +45,92 @@ nav #menu a {
   font-weight: unset;
 }
 
-.container {
-  margin: 75px auto 0 auto;
-  max-width: 900px;
-  text-align: center;
+#features {
+  margin-top: 50px;
+}
+#features div {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: center;
+  margin: 20px 0;
+}
+#features div span {
+  min-width: 100px;
+}
+#features div span i {
+  color: orange;
+  font-size: 40px;
+}
+#features div div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  line-height: 1.5em;
+  margin-left: 70px;
+  text-align: left;
+}
+#features div div h2, #features div div p {
+  margin: 0;
+}
+
+#operation {
+  margin-top: 50px;
+}
+#operation iframe {
+  height: 315px;
+  width: 560px;
+}
+
+#pricing {
+  display: grid;
+  grid-gap: 0 15px;
+  grid-template-columns: repeat(3, 1fr);
+  box-sizing: border-box;
+  margin-top: 50px;
+}
+#pricing > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border: 1px solid black;
+  height: 250px;
+}
+#pricing > div header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  background: #ddd;
+  font-weight: bold;
+  height: 40px;
+}
+#pricing > div div span {
+  font-family: sans-serif;
+  font-size: 25px;
+  color: black;
+  font-weight: bold;
+}
+#pricing > div div p {
+  margin: 10px auto;
+  width: 50%;
+}
+#pricing > div button {
+  margin: 15px auto;
+}
+
+body {
+  font-family: "Lore";
+  font-size: 1em;
+  color: black;
+  font-weight: unset;
+  background-color: #eee;
+  margin: 0;
+  padding: 0;
 }
 
 header {
@@ -65,105 +153,38 @@ header form {
   height: 80px;
 }
 header form input {
-  padding-left: 5px;
-  min-width: 200px;
-  width: 35%;
   height: 30px;
+  min-width: 200px;
+  padding-left: 5px;
+  width: 35%;
 }
-#features {
-  margin-top: 50px;
-}
-#features div {
-  display: flex;
-  flex-direction: row;
-  justify-content: stretch;
-  align-items: center;
-  margin: 20px 0;
-}
-#features div span {
-  width: 40px;
-  height: 40px;
-  background-color: green;
-}
-#features div div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  margin-left: 70px;
-  text-align: left;
-  line-height: 1.5em;
-}
-#features div div h2, #features div div p {
-  margin: 0;
-}
-
-#operation {
-  margin-top: 50px;
-}
-#operation iframe {
-  height: 315px;
-  width: 560px;
-}
-
-#pricing {
-  display: grid;
-  grid-gap: 0 15px;
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 50px;
-  box-sizing: border-box;
-}
-#pricing > div {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid black;
-  background: white;
-  height: 250px;
-}
-#pricing > div header {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  align-self: stretch;
-  background: #ddd;
-  font-weight: bold;
-}
-#pricing > div div span {
-  font-family: sans-serif;
-  font-size: 25px;
-  color: black;
-  font-weight: bold;
-}
-#pricing > div div p {
-  width: 50%;
-  margin: 10px auto;
-}
-#pricing > div button {
-  margin: 15px auto;
-}
-
 footer {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: flex-end;
-  height: 80px;
-  padding-right: 10px;
   background-color: #ddd;
+  height: 80px;
+  margin-top: 50px;
+  padding-right: 10px;
 }
-
-body {
-  padding: 0;
-  margin: 0;
-  background-color: #eee;
-  font-family: "Lore";
+footer p {
+  color: gray;
+  margin: 5px 0;
+}
+footer div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 230px;
+}
+footer div a {
+  font-family: sans-serif;
   font-size: 1em;
   color: black;
   font-weight: unset;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=main.css.map */
