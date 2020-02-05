@@ -1,3 +1,12 @@
+#pricing > div button, header form button {
+  border: none;
+  background: #f1c40f;
+  font-weight: bold;
+  max-width: 150px;
+  width: 100%;
+  height: 30px;
+}
+
 nav {
   position: fixed;
   top: 0;
@@ -27,6 +36,7 @@ nav #menu a {
   font-family: sans-serif;
   font-size: 1em;
   color: black;
+  font-weight: unset;
 }
 
 .container {
@@ -45,6 +55,7 @@ header h1 {
   font-family: "Lore";
   font-size: 25px;
   color: black;
+  font-weight: unset;
 }
 header form {
   display: flex;
@@ -59,15 +70,6 @@ header form input {
   width: 35%;
   height: 30px;
 }
-header form button {
-  border: none;
-  background: #f1c40f;
-  font-weight: bold;
-  max-width: 150px;
-  width: 100%;
-  height: 30px;
-}
-
 #features {
   margin-top: 50px;
 }
@@ -106,12 +108,52 @@ header form button {
 
 #pricing {
   display: grid;
-  grid-template-columns: repeat(3, 33.3333%);
+  grid-gap: 0 15px;
+  grid-template-columns: repeat(3, 1fr);
   margin-top: 50px;
+  box-sizing: border-box;
 }
 #pricing > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   border: 1px solid black;
-  margin: 0 10px;
+  background: white;
+  height: 250px;
+}
+#pricing > div header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  align-self: stretch;
+  background: #ddd;
+  font-weight: bold;
+}
+#pricing > div div span {
+  font-family: sans-serif;
+  font-size: 25px;
+  color: black;
+  font-weight: bold;
+}
+#pricing > div div p {
+  width: 50%;
+  margin: 10px auto;
+}
+#pricing > div button {
+  margin: 15px auto;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 80px;
+  padding-right: 10px;
+  background-color: #ddd;
 }
 
 body {
@@ -121,6 +163,7 @@ body {
   font-family: "Lore";
   font-size: 1em;
   color: black;
+  font-weight: unset;
 }
 
 /*# sourceMappingURL=main.css.map */
