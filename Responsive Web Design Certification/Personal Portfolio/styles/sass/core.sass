@@ -1,0 +1,40 @@
+@import './_variables.sass'
+@import './_functions.sass'
+@import './_main_content.sass'
+    
+body
+    +text_style('Lore')
+    background-color: $background_pattern
+    margin: 0
+    padding: 0
+
+header
+    +display_flex(column)
+    h1 
+        +text_style('Lore', 25px)
+    form 
+        +display_flex(column, space-between ,center)
+        height: 80px
+        input 
+            height: 30px
+            min-width: 200px
+            padding-left: 5px
+            width: 35%
+        button
+            @extend %button_style
+
+footer 
+    +display_flex(column, center, flex-end)
+    background-color: #ddd
+    height: 80px
+    margin-top: 50px
+    padding-right: 10px
+    p 
+        color: gray
+        margin: 5px 0
+    div
+        +display_flex($justify: space-between, $align: center)
+        width: 230px
+        a
+            +text_style()        
+            text-decoration: none

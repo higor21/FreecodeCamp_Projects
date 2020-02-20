@@ -1,0 +1,27 @@
+=display_flex($direction: row, $justify: stretch, $align: stretch)
+    display: flex
+    flex-direction: $direction
+    justify-content: $justify
+    align-items: $align
+
+=text_style($letter_style: sans-serif, $size: 1em, $color: black, $bold: false)
+    font-family: $letter_style
+    font-size: $size
+    color: $color
+    font-weight: if($bold, bold, unset)
+
+=display_grid($grid_template, $opt: column, $grid_gap: 0 0)
+    display: grid
+    grid-gap: $grid_gap
+    @if $opt == column
+        grid-template-columns: $grid_template
+    @else 
+        grid-template-rows: $grid_template
+
+%button_style
+    border: none
+    background: #f1c40f
+    font-weight: bold
+    max-width: 150px
+    width: 100%
+    height: 30px
